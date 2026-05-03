@@ -35,45 +35,9 @@ This project implements an end-to-end network anomaly detection system that clas
 
 ## System Architecture
 
-```
-┌─────────────────────────────────────────────────────────────────────┐
-│                    DATA ACQUISITION LAYER                            │
-│  KDDCup'99 Dataset — 494,021 records → 100,000 sampled              │
-│  41 Features + 1 Label (normal / 20 attack types)                   │
-└──────────────────────────────────────▼──────────────────────────────┘
-                                        │
-┌───────────────────────────────────────▼──────────────────────────────┐
-│                    PREPROCESSING PIPELINE                             │
-│  [1] Load → [2] Missing Values → [3] Duplicates → [4] Encoding       │
-│  [5] StandardScaler → [6] SMOTE (balance) → [7] PCA (41→20)         │
-└───────────────────────────────────────▼──────────────────────────────┘
-                                        │
-                    ┌───────────────────┼───────────────────┐
-                    ▼                   │                   ▼                  │
-┌─────────────────────────────┐ ┌───────▼──────────────────────┐
-│      SUPERVISED MODELS      │ │     UNSUPERVISED MODEL       │
-│  • Naive Bayes              │ │  • Isolation Forest          │
-│  • SVM (RBF Kernel)         │ │    (contamination=0.1)       │
-│  • XGBoost                  │ │                              │
-│  • LightGBM                 │ │                              │
-│  (Hyperparameter tuned)     │ │                              │
-└───────────────▼─────────────┘ └───────────▼──────────────────┘
-                │                           │
-                └───────────────┐   ┌─────────┘
-                                ▼   ▼
-┌──────────────────────────────────────────────────────────────────┐
-│                      EVALUATION LAYER                             │
-│  Accuracy | Precision | Recall | F1-Score | AUC-ROC              │
-│  Confusion Matrix | Classification Report                        │
-│  Paired T-Tests | 95% Confidence Intervals                       │
-└───────────────────────────────▼──────────────────────────────────┘
-                                    │
-┌───────────────────────────────────▼──────────────────────────────┐
-│                      VISUALIZATION                                │
-│  Bar Charts | ROC Curves | Confusion Matrices                    │
-│  Feature Importance | PCA Variance | Correlation Heatmap         │
-└──────────────────────────────────────────────────────────────────┘
-```
+<p align="center">
+  <img src="architecture/ml_pipeline_system_architecture.svg" alt="ML Pipeline System Architecture" width="100%">
+</p>
 
 The architecture follows a layered design where data flows sequentially through acquisition, preprocessing, model training, evaluation, and visualization stages. The preprocessing pipeline branches into parallel supervised and unsupervised model training, with all predictions converging into a unified evaluation layer for direct model comparison.
 
