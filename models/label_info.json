@@ -1,0 +1,126 @@
+{
+  "protocol_type": {
+    "classes": [
+      "icmp",
+      "tcp",
+      "udp"
+    ]
+  },
+  "service": {
+    "classes": [
+      "IRC",
+      "X11",
+      "Z39_50",
+      "auth",
+      "bgp",
+      "courier",
+      "csnet_ns",
+      "ctf",
+      "daytime",
+      "discard",
+      "domain",
+      "domain_u",
+      "echo",
+      "eco_i",
+      "ecr_i",
+      "efs",
+      "exec",
+      "finger",
+      "ftp",
+      "ftp_data",
+      "gopher",
+      "hostnames",
+      "http",
+      "http_443",
+      "imap4",
+      "iso_tsap",
+      "klogin",
+      "kshell",
+      "ldap",
+      "link",
+      "login",
+      "mtp",
+      "name",
+      "netbios_dgm",
+      "netbios_ns",
+      "netbios_ssn",
+      "netstat",
+      "nnsp",
+      "nntp",
+      "ntp_u",
+      "other",
+      "pop_2",
+      "pop_3",
+      "printer",
+      "private",
+      "remote_job",
+      "rje",
+      "shell",
+      "smtp",
+      "sql_net",
+      "ssh",
+      "sunrpc",
+      "supdup",
+      "systat",
+      "telnet",
+      "tftp_u",
+      "tim_i",
+      "time",
+      "urh_i",
+      "urp_i",
+      "uucp",
+      "uucp_path",
+      "vmnet",
+      "whois"
+    ]
+  },
+  "flag": {
+    "classes": [
+      "OTH",
+      "REJ",
+      "RSTO",
+      "RSTOS0",
+      "RSTR",
+      "S0",
+      "S1",
+      "S2",
+      "S3",
+      "SF",
+      "SH"
+    ]
+  },
+  "binary": {
+    "classes": [
+      "attack",
+      "normal"
+    ]
+  },
+  "multiclass": {
+    "classes": [
+      "back",
+      "buffer_overflow",
+      "ftp_write",
+      "guess_passwd",
+      "imap",
+      "ipsweep",
+      "land",
+      "loadmodule",
+      "multihop",
+      "neptune",
+      "nmap",
+      "normal",
+      "perl",
+      "pod",
+      "portsweep",
+      "satan",
+      "smurf",
+      "teardrop",
+      "warezclient",
+      "warezmaster"
+    ]
+  },
+  "label_counts": {
+    "0": 13904,
+    "1": 14724
+  }
+}
